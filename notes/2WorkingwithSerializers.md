@@ -89,7 +89,7 @@ Serializers is a structure similar to a model or a form. It represents the data 
 - From postman we tried sending variations of requests
 
 **Sending Nothing:**
-    ![ss postman sending empty](ss/PMsendingnothing.JPG)
+    ![ss postman sending empty](ss/PMsendingNothing.JPG)
 
 **Sending only title:**
     ![ss postman Sending only title](ss/PMSendingonlyTitle.JPG)
