@@ -150,4 +150,4 @@ Serializers is a structure similar to a model or a form. It represents the data 
         return Response(serializer.data)
     ```
 
-![Single Get Request as Dictionary](ss/PMSingleGetReqDictionary.jpg)
+![Single Get Request as Dictionary](ss/PMSingleGetReqDictionary.JPG)
