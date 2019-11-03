@@ -89,14 +89,14 @@ Serializers is a structure similar to a model or a form. It represents the data 
 - From postman we tried sending variations of requests
 
 **Sending Nothing:**
-    ![ss postman sending empty](ss/PMsendingnothing.jpg)
+    ![ss postman sending empty](ss/PMsendingnothing.JPG)
 
 **Sending only title:**
-    ![ss postman Sending only title](ss/PMSendingonlyTitle.jpg)
+    ![ss postman Sending only title](ss/PMSendingonlyTitle.JPG)
 
 **Sending both Title and Description:**
 - We still get error because we have no user posting the data. 
-    ![ss postman both but no user](ss/PMsendingWithoutOwner.jpg)
+    ![ss postman both but no user](ss/PMsendingWithoutOwner.JPG)
 
 
 
@@ -120,7 +120,7 @@ Serializers is a structure similar to a model or a form. It represents the data 
 - We have returned the serializer data. 
 - Also we haven't used the is_valid() method because we are not passing the data. We are simply serializing the queryset of known model. 
 
-![get Request Postman](ss/PMGetReq.jpg)
+![get Request Postman](ss/PMGetReq.JPG)
 
 - Get send a get request to a localhost and our json response is a list of dictionaries. The field of the dictionaries corresponds to what we have sent in a serializer. 
 - Suppose we want to send the get owner too. We can change the serializer as follows:
@@ -137,7 +137,7 @@ Serializers is a structure similar to a model or a form. It represents the data 
     ```
 - We get the following response:
 
-![get with owner](ss/PMGetReqWithOwner.jpg)
+![get with owner](ss/PMGetReqWithOwner.JPG)
 
 - 1 is returned in the owner because they are the primary key of the users. 
 - Getting only one data (as dictionary)
