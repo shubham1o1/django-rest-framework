@@ -1,0 +1,4 @@
+db.sqlite3
+django_restframework/__pycache__
+core/__pycache__
+core/migrations
