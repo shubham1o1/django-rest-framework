@@ -120,7 +120,8 @@ Serializers is a structure similar to a model or a form. It represents the data 
 - We have returned the serializer data. 
 - Also we haven't used the is_valid() method because we are not passing the data. We are simply serializing the queryset of known model. 
 
-    ![get Request Postman](ss/PMGetReq.jpg)
+![get Request Postman](ss/PMGetReq.jpg)
+
 - Get send a get request to a localhost and our json response is a list of dictionaries. The field of the dictionaries corresponds to what we have sent in a serializer. 
 - Suppose we want to send the get owner too. We can change the serializer as follows:
 
@@ -135,7 +136,9 @@ Serializers is a structure similar to a model or a form. It represents the data 
             )
     ```
 - We get the following response:
-    ![get with owner](ss/PMGetReqWithOwner.jpg)
+
+![get with owner](ss/PMGetReqWithOwner.jpg)
+
 - 1 is returned in the owner because they are the primary key of the users. 
 - Getting only one data (as dictionary)
     ```python
@@ -146,4 +149,5 @@ Serializers is a structure similar to a model or a form. It represents the data 
         serializer = PostSerializer(post)
         return Response(serializer.data)
     ```
-    ![Single Get Request as Dictionary](ss/PMSingleGetReqDictionary.jpg)
+
+![Single Get Request as Dictionary](ss/PMSingleGetReqDictionary.jpg)
