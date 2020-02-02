@@ -74,3 +74,40 @@
 
 ### views and urls in token generation:
 
+- go to views
+- add view in url, that comes directly from django rest framework
+- In urls.py of the core app you do the following:
+```python 
+    ...
+    from rest_framework.authtoken.views import obtain_auth_token 
+    ...
+
+    urlPatterns = [
+        ...
+        path('api/token/', obtain_auth_token, name = 'obtain-token'),
+    ]
+```
+- obtain_auth_token is a view that will return token for a user when we send user name and password. 
+- path -> to send our token to : ```'api/token/'```
+- view that handle the logic of sending the token: ```obtain_auth_token```
+- the name of the token: ```'obtain-token'```
+- In postman send the username and password to the following url and you get the token : ```localhost:8000/api/token```
+![Getting Token for username and password](ss/PMsendingUsernameGettingToken.JPG)
+
+- There are several third party packages tat DRF recommends to configure authentication
+- Check out authentication in DRF documentation. 
+- choices: django-rest-auth, Django REST framework OAuth, django-rest-framework-social-oauth2
+- We are using django-rest-auth. Go to its documentation and see how to install: ```pip install django-rest-auth```
+- in settings.py in INSTALLED_APPS, add : ```  'rest_auth', ```
+- in urls.py add: 
+```python
+    path('rest-auth/', include('rest_auth.urls')),
+```
+- Run migrations
+- Go to postman, open a new window, and type the address: ```localhost:8000/rest-auth/login/``` under POST request 
+- Also, add pass the username and password as form data
+- hit send, then you'll get a json response of some key and it's token value pair. 
+![Third Party Magic](ss/PMrestAuthInBuiltView.JPG)
+
+- You can do something similar for password reset, for forgot password. See API endpoints in rest-auth's documentation. 
+- registration and all sorts of authentication are present. 

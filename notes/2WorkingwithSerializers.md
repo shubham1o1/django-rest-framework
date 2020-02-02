@@ -1,6 +1,6 @@
 # Working with serializers
 
-Typically we use django models to store in database. We must return the data in the database use DRF. We must convert data from models to json format. DRF uses serializers to do that. 
+Typically we use django models to store in database. We must return the data in the database using DRF. We must convert data from models to json format. DRF uses serializers to do that. 
 
 Serializers is a structure similar to a model or a form. It represents the data you want to return in json format or accept in json format. 
 

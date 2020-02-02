@@ -1,8 +1,11 @@
 # [What is an API?](https://www.youtube.com/watch?v=RPsDhoWY_kc)
 
 An API is an acronym for Application Programming Interface. 
+
 **Application:** It's a functional app
+
 **Programming:** It has an aspect of programming in it
+
 **Interface:** An interface is like a facilitator of communication. So in the context of an 'API', an interface allows other users/machines/services to communicate with it.
 
 ### How does an API work?
@@ -31,7 +34,9 @@ With that being said, let's look at how Django can work as an API.
 
 ## Code:
 
+- Create a virtual environment, install django
 - Create an app
+
 ```bash 
 python manage.py startapp core 
 ```
@@ -49,7 +54,7 @@ python manage.py startapp core
         return JsonResponse(data) 
         
         # return JsonResponse(data, safe =false) 
-        # to pass something other than json data
+        # to pass something other than json data like list
     ```
 - Here we have imported the JsonResponse
 - test_view() takes request argument and return a Json data. Which is possible due to built in JsonResponse module in *django.http*
@@ -93,16 +98,21 @@ The Django Rest Framework (DRF) is a package for building APIs with Django. It i
     ```python
 
     from rest_framework.response import Response
-    from rest_framework.views import APIView
+    # Response helps to return the data
 
+    from rest_framework.views import APIView 
+    # APIView supports requests (get/post)
+    # It is a wrapper that allows to create APIView
 
+    # Inherits APIView with many methods such as get()
     class TestView(APIView):
         def get(self, request, *args, **kwargs):
             data = {
                 'name': 'john',
                 'age': 23
             }    
-            return Response(data)
+            return Response(data) 
+            #return a response at the end of the request
 
     ```
 - Go to urls and makes the following changes:
